@@ -1,0 +1,1576 @@
+            <!DOCTYPE html>
+            <html lang="en" class="scroll-smooth">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>German GE Certifications</title>
+                <meta name="description" content="Discover my certifications in programming, data analysis, artificial intelligence, and more.">
+                
+                <!-- SEO Meta Tags -->
+                <meta property="og:title" content="My Certifications - Version 3.0">
+                <meta property="og:description" content="Discover my certifications in programming, data analysis, artificial intelligence, and more.">
+                <meta property="og:image" content="images/og-image.jpg">
+                <meta property="og:url" content="https://www.yoursite.com">
+                <meta name="twitter:card" content="summary_large_image">
+                
+                <!-- Inline Script to Set Dark Mode Before Tailwind CSS Loads -->
+                <script>
+                    (function() {
+                        try {
+                            const theme = localStorage.getItem('theme');
+                            if (theme === 'dark') {
+                                document.documentElement.classList.add('dark');
+                            } else if (theme === 'light') {
+                                document.documentElement.classList.remove('dark');
+                            } else {
+                                // Optional: Detect system preference
+                                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                                    document.documentElement.classList.add('dark');
+                                }
+                            }
+                        } catch (e) {
+                            console.error('Error setting theme:', e);
+                        }
+                    })();
+                </script>
+                
+                <!-- Tailwind CSS CDN with Purge for Optimization -->
+                <script src="https://cdn.tailwindcss.com"></script>
+                <script>
+                    tailwind.config = {
+                        darkMode: 'class',
+                        theme: {
+                            extend: {
+                                fontFamily: {
+                                    sans: ['Poppins', 'sans-serif'],
+                                },
+                                transitionProperty: {
+                                    'height': 'height',
+                                    'spacing': 'margin, padding',
+                                },
+                            },
+                        },
+                    }
+                </script>
+                
+                <!-- Preload Fonts -->
+                <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+                
+                <!-- Updated Favicon -->
+                <link rel="icon" href="image.jpg" type="image/x-icon">
+                
+                <!-- Additional Styles -->
+                <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        /* Dark Mode Styles */
+        .dark body {
+            background-color: #1a202c;
+            color: #a0aec0;
+        }
+        .dark .bg-white {
+            background-color: #2d3748;
+        }
+        .dark .text-gray-700 {
+            color: #a0aec0;
+        }
+        .dark .bg-blue-900 {
+            background-color: #2c5282;
+        }
+        /* Transition Effects for Cards */
+        .card {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .card.hidden {
+            transform: scale(0.95);
+            opacity: 0;
+        }
+        /* Entry Animations */
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Smooth Transitions */
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        /* Hero Section */
+        .hero {
+            background: url('images/hero-background.jpg') center center / cover no-repeat;
+            height: 40vh; /* Reducida de 60vh a 40vh */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            position: relative;
+        }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            inset: 0;
+        }
+        /* Section Visibility */
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        /* Active Nav Link Styles */
+        .nav-link.active {
+            color: #2563EB; /* Tailwind's blue-600 */
+        }
+        .dark .nav-link.active {
+            color: #60A5FA; /* Tailwind's blue-400 */
+        }
+        /* Fixed Height for Buttons */
+        .card .mt-4.flex .btn {
+            height: 50px; /* Ajusta según sea necesario */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+            </head>
+            <body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 overflow-x-hidden">
+
+                <!-- Compact Navigation Bar -->
+                <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition-colors duration-300" role="navigation" aria-label="Main Navigation">
+                    <div class="max-w-7xl mx-auto px-4">
+                        <div class="flex justify-between items-center py-4">
+                            <a href="#" id="nav-all-certifications" class="text-2xl font-semibold text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors nav-link active" role="menuitem">Certifications</a>
+                            <!-- Navigation Links para Desktop -->
+                            <ul id="nav-links" class="hidden md:flex space-x-6" role="menubar">
+                                <li role="none"><a href="#" data-page="all-certifications" class="nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400" role="menuitem">All Certifications</a></li>
+                                <li role="none"><a href="#" data-page="programming" class="nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400" role="menuitem">Programming</a></li>
+                                <li role="none"><a href="#" data-page="data-analysis" class="nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400" role="menuitem">Data Analysis</a></li>
+                                <li role="none"><a href="#" data-page="artificial-intelligence" class="nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400" role="menuitem">Artificial Intelligence</a></li>
+                                <li role="none"><a href="#" data-page="languages" class="nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400" role="menuitem">Languages</a></li>
+                            </ul>
+                            <!-- Contenedor del Menú Móvil y Botón de Toggle -->
+                            <div class="flex items-center space-x-4">
+                                <!-- Botón de Toggle de Modo Oscuro -->
+                                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="bg-blue-600 text-white p-2 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform transform hover:scale-110 flex items-center justify-center">
+                                    <!-- Ícono de Sol (Modo Claro) -->
+                                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.485-8.485h-1M4.515 12.515h-1m15.364 4.95l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                                    </svg>
+                                    <!-- Ícono de Luna (Modo Oscuro) -->
+                                    <svg id="moon-icon" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                                    </svg>
+                                </button>
+                                <!-- Toggle del Menú Móvil -->
+                                <button id="menu-toggle" aria-label="Toggle Menu" class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-transform transform hover:scale-110">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+                    <!-- Menú Dropdown Móvil -->
+                    <div id="mobile-menu" class="md:hidden hidden bg-white dark:bg-gray-800 px-4 pb-4 transition-transform duration-300" role="menu">
+                        <ul class="space-y-3">
+                            <li><a href="#" data-page="all-certifications" class="block nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors" role="menuitem">All Certifications</a></li>
+                            <li><a href="#" data-page="programming" class="block nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors" role="menuitem">Programming</a></li>
+                            <li><a href="#" data-page="data-analysis" class="block nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors" role="menuitem">Data Analysis</a></li>
+                            <li><a href="#" data-page="artificial-intelligence" class="block nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors" role="menuitem">Artificial Intelligence</a></li>
+                            <li><a href="#" data-page="languages" class="block nav-link text-gray-700 dark:text-gray-200 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors" role="menuitem">Languages</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Main Section -->
+                    <main class="max-w-7xl mx-auto py-12 px-4">
+                        <!-- All Certifications Section -->
+                        <section id="all-certifications" class="section active mb-16">
+                            <!-- Hero Section Movido Aquí -->
+                            <div class="hero relative">
+                                <div class="hero-overlay"></div>
+                                <div class="relative z-10 text-center px-4">
+                                    <h1 class="text-4xl md:text-5xl font-bold mb-2">Welcome to My Certifications</h1>
+                                    <p style="margin-top:15px" class="text-lg md:text-xl">Explore my achievements in programming, data analysis, artificial intelligence, and more.</p>
+                                    <p style="margin-top:30px" class="text-xl md:text-xl font-bold mb-2">Germán García Estévez</p>
+                                </div>
+                            </div>
+                            <h2 class="text-3xl font-semibold mb-6 text-center mt-8">All Certifications</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                                <!-- Existing Certifications -->
+
+                                <!-- New Certifications Start Here -->
+
+            <!-- 1. Certificado de Google -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://images.credly.com/size/680x680/images/015364a4-c68c-4c42-8060-3553118f2ff0/image.png" alt="Proceso de datos sucios a datos limpios" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Certificado de análisis de datos de Google</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Competencias en análisis de datos.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-analisis-google">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://www.credly.com/badges/e4e062e0-2f98-410c-9f16-f8d6fb1315af/public_url" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 2. Data Visualization -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://user-images.githubusercontent.com/315810/92254613-279c8000-ee9f-11ea-9b73-5622a7d95f3f.png" alt="Data Visualization" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Data Visualization</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Visualización avanzada de datos.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-data-visualization">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://www.kaggle.com/learn/certification/germangarest/data-visualization" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 3. PCEP – Certified Entry-Level Python Programmer -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://miro.medium.com/v2/resize:fit:483/1*v4z6ZjVgc5llyg7qCkFiLw.png" alt="PCEP – Certified Entry-Level Python Programmer" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">PCEP – Certified Entry-Level Python Programmer</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Certificación básica en programación Python.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-pcep">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://verify.openedg.org/?id=qB3h.v1Sd.KSvo" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 4. Pandas -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9F8WH5YpCtlWec7hlDm7mj8WjqOt9RdKoVg&s" alt="Pandas" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Pandas</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Manejo avanzado de datos con Pandas.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-pandas">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://www.kaggle.com/learn/certification/germangarest/pandas" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 5. Certificación Microsoft Azure Fundamentals: Examen AZ-900 -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxwQ-HcqYWYmiAhAfrCni-OWbht4XRpIrHQ&s" alt="Certificación Microsoft Azure Fundamentals: Examen AZ-900" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Certificación Microsoft Azure Fundamentals: Examen AZ-900</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Fundamentos de servicios en la nube.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-azure-fundamentals">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://openwebinars.net/cert/GNH0" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 6. Power BI Bootcamp certificado IBM skillsbuild datahack 424 -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://images.datacamp.com/image/upload/v1724169856/image_ff55d03003.png" alt="Power BI Bootcamp certificado IBM skillsbuild datahack 424" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Power BI Bootcamp certificado IBM skillsbuild datahack 424</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Análisis y visualización de datos.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-power-bi-bootcamp-ibm">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://drive.google.com/file/d/1-TbNbEcBnBz6Ugqp8F9Tz_PXuaRPUtHa/view?usp=sharing" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 7. XO Platform - End-to-End (Basic) -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://vistaragrowth.com/wp-content/uploads/2022/01/Kore-Magic-Quadrant-1350x1020-Feature-Img-Blog-V5.jpgq=tbn:ANd9GcQErlguXGDYrKByLfLhVuf6p-7ybTe_Ub6jKw&s" alt="XO Platform - End-to-End (Basic)" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">XO Platform - End-to-End (Basic)</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Desarrollo integral de chatbots inteligentes.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-xo-platform-end-to-end-basic">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://drive.google.com/file/d/1XMs_1LpT7Rs9A-DiDfubiq1dZEaMmUrl/view?usp=sharing" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 8. Curso de Power BI Avanzado -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://images.datacamp.com/image/upload/v1724169856/image_ff55d03003.png" alt="Curso de Power BI Avanzado" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso de Power BI Avanzado</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Avanzado manejo de Power BI.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-curso-power-bi-avanzado">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://openwebinars.net/cert/uVKa" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 9. Matemáticas y Estadística para Inteligencia Artificial -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://pbs.twimg.com/profile_images/1676531109629132800/yBtHL4wa_400x400.jpg" alt="Matemáticas y Estadística para Inteligencia Artificial" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Matemáticas y Estadística para Inteligencia Artificial</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Fundamentos matemáticos y estadísticos AI.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-matematicas-estadistica-ai">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://openwebinars.net/cert/4N7Z" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 10. Curso de Python: Aprende a programar en Python 3 -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/640px-Python.svg.png" alt="Curso de Python: Aprende a programar en Python 3" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso de Python: Aprende a programar en Python 3</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Aprendizaje básico de Python.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-curso-python-3">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://openwebinars.net/cert/vtHR" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 11. Curso de SQL desde Cero -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://arturonavarro.com/wp-content/uploads/2024/09/sql.jpeg" alt="Curso de SQL desde Cero" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso de SQL desde Cero</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Introducción al manejo de bases de datos.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-curso-sql-desde-cero">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://openwebinars.net/cert/Ayty" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 12. Curso de certificación Excel Associate MO-200 -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://cdn.pixabay.com/photo/2023/06/01/12/02/excel-logo-8033473_960_720.png" alt="Curso de certificación Excel Associate MO-200" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso de certificación Excel Associate MO-200</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Dominio de Excel para análisis.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-certificacion-excel-associate-mo-200">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://openwebinars.net/cert/HTJW" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 13. Curso para aprender Linux desde cero -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://proximahost.es/blog/wp-content/uploads/2022/01/linux-30-anos.png" alt="Curso para aprender Linux desde cero" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso para aprender Linux desde cero</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Aprendizaje básico de Linux.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-curso-linux-desde-cero">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://openwebinars.net/cert/WBJr" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 14. First Certificate in English -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://agenda.deusto.es/wp-content/uploads/2017/09/Cambridge_Assessment_logo.jpg" alt="First Certificate in English" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">First Certificate in English</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Certificación de competencia en inglés.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-first-certificate-english">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://drive.google.com/file/d/1_KF1GkCNlwy9ZtfN0iJBy1vuUOSEd_M8/view?usp=sharing" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 15. Youthpass Sustain-Able -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://www.injuve.es/sites/default/files/styles/porcentaje/public/imagenes/2022/04/youthpass.png?itok=JwH2Rr6a" alt="Youthpass In Nature" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Youthpass Sustain-Able</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Validación de competencias en sostenibilidad.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-youthpass-in-nature">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://drive.google.com/file/d/1iC4k2lcjyAjUuDJbau6GN5xDE8i6GzTT/view?usp=sharing" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 16. Youthpass In Nature -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://www.injuve.es/sites/default/files/styles/porcentaje/public/imagenes/2022/04/youthpass.png?itok=JwH2Rr6a" alt="Youthpass On Board" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Youthpass In Nature</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Validación de competencias en proyectos Erasmus+ de naturaleza.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-youthpass-on-board">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://drive.google.com/file/d/1FGmuxOAn0MIey24w0zZXdC2-iI8XqMXP/view?usp=sharing" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+
+
+            <!-- New Certifications End Here -->
+            </div>
+            </section>
+
+            <!-- Programming Certifications Section -->
+            <section id="programming" class="section mb-16">
+                <h2 class="text-3xl font-semibold mb-6 text-center">Programming Certifications</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Existing Certifications -->
+
+                    <!-- New Certifications Start Here -->
+
+                    <!-- 6. PCEP – Certified Entry-Level Python Programmer -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://miro.medium.com/v2/resize:fit:483/1*v4z6ZjVgc5llyg7qCkFiLw.png" alt="PCEP – Certified Entry-Level Python Programmer" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">PCEP – Certified Entry-Level Python Programmer</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Certificación básica en programación Python.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-pcep">
+                                    Learn More
+                                </button>
+                                <a href="https://verify.openedg.org/?id=qB3h.v1Sd.KSvo" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Pandas -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9F8WH5YpCtlWec7hlDm7mj8WjqOt9RdKoVg&s" alt="Pandas" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Pandas</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Manejo avanzado de datos con Pandas.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-pandas">
+                                    Learn More
+                                </button>
+                                <a href="https://www.kaggle.com/learn/certification/germangarest/pandas" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Certificación Microsoft Azure Fundamentals: Examen AZ-900 -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxwQ-HcqYWYmiAhAfrCni-OWbht4XRpIrHQ&s" alt="Certificación Microsoft Azure Fundamentals: Examen AZ-900" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Certificación Microsoft Azure Fundamentals: Examen AZ-900</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Fundamentos de servicios en la nube.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-azure-fundamentals">
+                                    Learn More
+                                </button>
+                                <a href="https://openwebinars.net/cert/GNH0" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. XO Platform - End-to-End (Basic) -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://vistaragrowth.com/wp-content/uploads/2022/01/Kore-Magic-Quadrant-1350x1020-Feature-Img-Blog-V5.jpgq=tbn:ANd9GcQErlguXGDYrKByLfLhVuf6p-7ybTe_Ub6jKw&s" alt="XO Platform - End-to-End (Basic)" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">XO Platform - End-to-End (Basic)</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Desarrollo integral de chatbots inteligentes.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-xo-platform-end-to-end-basic">
+                                    Learn More
+                                </button>
+                                <a href="https://drive.google.com/file/d/1XMs_1LpT7Rs9A-DiDfubiq1dZEaMmUrl/view?usp=sharing" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13. Curso de Python: Aprende a programar en Python 3 -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/640px-Python.svg.png" alt="Curso de Python: Aprende a programar en Python 3" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso de Python: Aprende a programar en Python 3</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Aprendizaje básico de programación en Python 3.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-curso-python-3">
+                                    Learn More
+                                </button>
+                                <a href="https://openwebinars.net/cert/vtHR" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14. Curso de SQL desde Cero -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://arturonavarro.com/wp-content/uploads/2024/09/sql.jpeg" alt="Curso de SQL desde Cero" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso de SQL desde Cero</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Introducción al manejo de bases de datos con SQL.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-curso-sql-desde-cero">
+                                    Learn More
+                                </button>
+                                <a href="https://openwebinars.net/cert/Ayty" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 16. Curso para aprender Linux desde cero -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://proximahost.es/blog/wp-content/uploads/2022/01/linux-30-anos.png" alt="Curso para aprender Linux desde cero" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso para aprender Linux desde cero</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Aprendizaje básico de Linux.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-curso-linux-desde-cero">
+                                    Learn More
+                                </button>
+                                <a href="https://openwebinars.net/cert/WBJr" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- New Certifications End Here -->
+                </div>
+            </section>
+
+            <!-- Data Analysis Certifications Section -->
+            <section id="data-analysis" class="section mb-16">
+                <h2 class="text-3xl font-semibold mb-6 text-center">Data Analysis Certifications</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Existing Certifications -->
+
+                    <!-- New Certifications Start Here -->
+
+                    <!-- 1. Certificado de Google -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://images.credly.com/size/680x680/images/015364a4-c68c-4c42-8060-3553118f2ff0/image.png" alt="Proceso de datos sucios a datos limpios" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Certificado de análisis de datos de Google</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Competencias en análisis de datos.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-analisis-google">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://www.credly.com/badges/e4e062e0-2f98-410c-9f16-f8d6fb1315af/public_url" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+                    <!-- 5. Data Visualization -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://user-images.githubusercontent.com/315810/92254613-279c8000-ee9f-11ea-9b73-5622a7d95f3f.png" alt="Data Visualization" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Data Visualization</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Visualización avanzada de datos.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-data-visualization">Learn More</button>
+                                <a href="https://www.kaggle.com/learn/certification/germangarest/data-visualization" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Pandas -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9F8WH5YpCtlWec7hlDm7mj8WjqOt9RdKoVg&s" alt="Pandas" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Pandas</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Manejo avanzado de datos con Pandas.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-pandas">
+                                    Learn More
+                                </button>
+                                <a href="https://www.kaggle.com/learn/certification/germangarest/pandas" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Certificación Microsoft Azure Fundamentals: Examen AZ-900 -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxwQ-HcqYWYmiAhAfrCni-OWbht4XRpIrHQ&s" alt="Certificación Microsoft Azure Fundamentals: Examen AZ-900" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Certificación Microsoft Azure Fundamentals: Examen AZ-900</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Fundamentos de servicios en la nube.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-azure-fundamentals">
+                                    Learn More
+                                </button>
+                                <a href="https://openwebinars.net/cert/GNH0" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Power BI Bootcamp certificado IBM skillsbuild datahack 424 -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://images.datacamp.com/image/upload/v1724169856/image_ff55d03003.png" alt="Power BI Bootcamp certificado IBM skillsbuild datahack 424" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Power BI Bootcamp certificado IBM skillsbuild datahack 424</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Análisis y visualización de datos con Power BI.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-power-bi-bootcamp-ibm">Learn More</button>
+                                <a href="https://drive.google.com/file/d/1-TbNbEcBnBz6Ugqp8F9Tz_PXuaRPUtHa/view?usp=sharing" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. XO Platform - End-to-End (Basic) -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://vistaragrowth.com/wp-content/uploads/2022/01/Kore-Magic-Quadrant-1350x1020-Feature-Img-Blog-V5.jpg" alt="XO Platform - End-to-End (Basic)" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">XO Platform - End-to-End (Basic)</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Desarrollo integral de chatbots inteligentes.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-xo-platform-end-to-end-basic">Learn More</button>
+                                <a href="https://drive.google.com/file/d/1XMs_1LpT7Rs9A-DiDfubiq1dZEaMmUrl/view?usp=sharing" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 11. Curso de Power BI Avanzado -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://images.datacamp.com/image/upload/v1724169856/image_ff55d03003.png" alt="Curso de Power BI Avanzado" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso de Power BI Avanzado</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Avanzado manejo de Power BI para análisis de datos.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-curso-power-bi-avanzado">Learn More</button>
+                                <a href="https://openwebinars.net/cert/uVKa" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. Matemáticas y Estadística para Inteligencia Artificial -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://pbs.twimg.com/profile_images/1676531109629132800/yBtHL4wa_400x400.jpg" alt="Matemáticas y Estadística para Inteligencia Artificial" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Matemáticas y Estadística para Inteligencia Artificial</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Fundamentos matemáticos y estadísticos para IA.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-matematicas-estadistica-ai">Learn More</button>
+                                <a href="https://openwebinars.net/cert/4N7Z" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14. Curso de SQL desde Cero -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://arturonavarro.com/wp-content/uploads/2024/09/sql.jpeg" alt="Curso de SQL desde Cero" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso de SQL desde Cero</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Introducción al manejo de bases de datos con SQL.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-curso-sql-desde-cero">Learn More</button>
+                                <a href="https://openwebinars.net/cert/Ayty" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15. Curso de certificación Excel Associate MO-200 -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://cdn.pixabay.com/photo/2023/06/01/12/02/excel-logo-8033473_960_720.png" alt="Curso de certificación Excel Associate MO-200" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Curso de certificación Excel Associate MO-200</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Dominio de Excel para análisis de datos.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-certificacion-excel-associate-mo-200">Learn More</button>
+                                <a href="https://openwebinars.net/cert/HTJW" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- New Certifications End Here -->
+                </div>
+            </section>
+
+            <!-- Artificial Intelligence Certifications Section -->
+            <section id="artificial-intelligence" class="section mb-16">
+                <h2 class="text-3xl font-semibold mb-6 text-center">Artificial Intelligence Certifications</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- 10. XO Platform - End-to-End (Basic) -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://vistaragrowth.com/wp-content/uploads/2022/01/Kore-Magic-Quadrant-1350x1020-Feature-Img-Blog-V5.jpg" alt="XO Platform - End-to-End (Basic)" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">XO Platform - End-to-End (Basic)</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Desarrollo integral de chatbots inteligentes.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-xo-platform-end-to-end-basic">Learn More</button>
+                                <a href="https://drive.google.com/file/d/1XMs_1LpT7Rs9A-DiDfubiq1dZEaMmUrl/view?usp=sharing" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. Matemáticas y Estadística para Inteligencia Artificial -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://pbs.twimg.com/profile_images/1676531109629132800/yBtHL4wa_400x400.jpg" alt="Matemáticas y Estadística para Inteligencia Artificial" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Matemáticas y Estadística para Inteligencia Artificial</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Fundamentos matemáticos y estadísticos para IA.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" aria-haspopup="dialog" data-modal-target="modal-matematicas-estadistica-ai">Learn More</button>
+                                <a href="https://openwebinars.net/cert/4N7Z" target="_blank" class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">Credencial</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- No new certifications for Artificial Intelligence yet -->
+                </div>
+            </section>
+
+            <!-- Languages Certifications Section -->
+            <section id="languages" class="section mb-16">
+                <h2 class="text-3xl font-semibold mb-6 text-center">Languages Certifications</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- 17. First Certificate in English -->
+                    <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                        <img class="w-full h-48 object-cover" src="https://agenda.deusto.es/wp-content/uploads/2017/09/Cambridge_Assessment_logo.jpg" alt="First Certificate in English" loading="lazy">
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">First Certificate in English</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Certificación de competencia en inglés.</p>
+                            <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                                <button 
+                                class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                                aria-haspopup="dialog" 
+                                data-modal-target="modal-first-certificate-english">
+                                Learn More
+                            </button>
+                            <a 
+                            href="https://drive.google.com/file/d/1_KF1GkCNlwy9ZtfN0iJBy1vuUOSEd_M8/view?usp=sharing" 
+                            target="_blank" 
+                            class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                            Credencial
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18. Youthpass Sustain-Able -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://www.injuve.es/sites/default/files/styles/porcentaje/public/imagenes/2022/04/youthpass.png?itok=JwH2Rr6a" alt="Youthpass In Nature" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Youthpass Sustain-Able</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Validación de competencias en sostenibilidad.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-youthpass-in-nature">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://drive.google.com/file/d/1iC4k2lcjyAjUuDJbau6GN5xDE8i6GzTT/view?usp=sharing" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+            <!-- 19. Youthpass In Nature -->
+            <div class="card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden relative hover:shadow-2xl transform hover:scale-105 transition-transform transition-shadow duration-300 animate-fade-in">
+                <img class="w-full h-48 object-cover" src="https://www.injuve.es/sites/default/files/styles/porcentaje/public/imagenes/2022/04/youthpass.png?itok=JwH2Rr6a" alt="Youthpass On Board" loading="lazy">
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-600 dark:text-blue-400">Youthpass In Nature</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Validación de competencias en proyectos Erasmus+ en la naturaleza.</p>
+                    <div class="mt-4 flex flex-col sm:flex-row sm:space-x-4 justify-center">
+                        <button 
+                        class="mb-2 sm:mb-0 w-full sm:w-auto px-4 py-2 bg-blue-600 text-white rounded-md shadow hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                        aria-haspopup="dialog" 
+                        data-modal-target="modal-youthpass-on-board">
+                        Learn More
+                    </button>
+                    <a 
+                    href="https://drive.google.com/file/d/1FGmuxOAn0MIey24w0zZXdC2-iI8XqMXP/view?usp=sharing" 
+                    target="_blank" 
+                    class="w-full sm:w-auto px-4 py-2 bg-transparent border border-blue-600 text-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-blue-300">
+                    Credencial
+                </a>
+            </div>
+            </div>
+            </div>
+
+
+            <!-- No new certifications for Languages yet -->
+            </div>
+            </section>
+            </main>
+
+            <!-- Simplified Footer -->
+            <footer class="bg-blue-900 dark:bg-blue-800 text-white text-center py-6">
+                <p class="text-sm">&copy; 2024 My Certifications. All rights reserved.</p>
+            </footer>
+
+            <!-- Modals for Certification Details -->
+            <!-- 1. Analisis de datos Google -->
+            <div id="modal-analisis-google" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-compartir-datos-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-compartir-datos-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Certificado de análisis de datos de Google</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAfOCZImksjuPqhOrqer00Zm--BEgBls5NIA&s" alt="Compartir datos a través del arte de la visualización">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Detalles sobre esta certificación, habilidades adquiridas y proyectos completados.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Limpieza y visualización de datos</li>
+                            <li>Programación en R</li>
+                            <li>Análisis en SQL</li>
+                            <li>Hojas de cálculo</li>
+                            <li>Cómo transformar datos en decisiones efectivas</li> 
+                        </ul>
+                        <a href="https://www.credly.com/badges/e4e062e0-2f98-410c-9f16-f8d6fb1315af/public_url" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Data Visualization Modal -->
+            <div id="modal-data-visualization" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-data-visualization-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-data-visualization-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Data Visualization</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://user-images.githubusercontent.com/315810/92254613-279c8000-ee9f-11ea-9b73-5622a7d95f3f.png" alt="Data Visualization">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Detalles sobre esta certificación, habilidades adquiridas y proyectos completados.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Creación de visualizaciones efectivas</li>
+                            <li>Uso de herramientas de visualización (e.g., Python matplotlib, Seaborn)</li>
+                            <li>Análisis e interpretación de datos visuales</li>
+                            <li>Diseño de gráficos interactivos</li>
+                            <li>Comunicación visual de información compleja</li>
+                        </ul>
+                        <a href="https://www.kaggle.com/learn/certification/germangarest/data-visualization" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. PCEP – Certified Entry-Level Python Programmer Modal -->
+            <div id="modal-pcep" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-pcep-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-pcep-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">PCEP – Certified Entry-Level Python Programmer</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://miro.medium.com/v2/resize:fit:483/1*v4z6ZjVgc5llyg7qCkFiLw.png" alt="PCEP – Certified Entry-Level Python Programmer">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Detalles sobre esta certificación, habilidades adquiridas y proyectos completados.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Fundamentos de programación en Python</li>
+                            <li>Escritura de scripts básicos en Python</li>
+                            <li>Manejo de tipos de datos y variables</li>
+                            <li>Control de flujo y manejo de errores</li>
+                            <li>Operaciones básicas de entrada/salida</li>
+                            <li>Introducción a funciones y módulos</li>
+                        </ul>
+                        <a href="https://verify.openedg.org/?id=qB3h.v1Sd.KSvo" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Pandas Modal -->
+            <div id="modal-pandas" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-pandas-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-pandas-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Pandas</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9F8WH5YpCtlWec7hlDm7mj8WjqOt9RdKoVg&s" alt="Pandas">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Detalles sobre esta certificación, habilidades adquiridas y proyectos completados.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Manipulación de datos con Pandas</li>
+                            <li>Análisis de datos en Python</li>
+                            <li>Limpieza y transformación de datos</li>
+                            <li>Creación y manejo de DataFrames y Series</li>
+                            <li>Visualización de datos utilizando Pandas</li>
+                            <li>Integración con otras bibliotecas de Python (e.g., NumPy, Matplotlib)</li>
+                        </ul>
+                        <a href="https://www.kaggle.com/learn/certification/germangarest/pandas" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Certificación Microsoft Azure Fundamentals: Examen AZ-900 Modal -->
+            <div id="modal-azure-fundamentals" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-azure-fundamentals-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-azure-fundamentals-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Certificación Microsoft Azure Fundamentals: Examen AZ-900</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNxwQ-HcqYWYmiAhAfrCni-OWbht4XRpIrHQ&s" alt="Certificación Microsoft Azure Fundamentals: Examen AZ-900">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Detalles sobre esta certificación, habilidades adquiridas y proyectos completados.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Comprensión de servicios en la nube</li>
+                            <li>Conocimientos básicos de Microsoft Azure</li>
+                            <li>Principios de seguridad y cumplimiento</li>
+                            <li>Gestión de precios y soporte</li>
+                            <li>Descripción de servicios principales de Azure</li>
+                        </ul>
+                        <a href="https://openwebinars.net/cert/GNH0" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Power BI Bootcamp certificado IBM skillsbuild datahack 424 Modal -->
+            <div id="modal-power-bi-bootcamp-ibm" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-power-bi-bootcamp-ibm-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-power-bi-bootcamp-ibm-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Power BI Bootcamp certificado IBM skillsbuild datahack 424</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://images.datacamp.com/image/upload/v1724169856/image_ff55d03003.png" alt="Power BI Bootcamp certificado IBM skillsbuild datahack 424">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Análisis y visualización de datos.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: IBM</li>
+                            <li>Fecha de expedición: Julio 2024</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-4 mb-2 text-blue-600 dark:text-blue-400">Skills adquiridas:</h4>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Definición de requisitos</li>
+                            <li>Capacidad de razonamiento</li>
+                            <li>Presentaciones</li>
+                            <li>Elaboración de informes</li>
+                            <li>Comunicación</li>
+                            <li>Microsoft Power BI</li>
+                            <li>Expresiones de análisis de datos (DAX)</li>
+                        </ul>
+                        <a href="https://drive.google.com/file/d/1-TbNbEcBnBz6Ugqp8F9Tz_PXuaRPUtHa/view?usp=sharing" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. XO Platform - End-to-End (Basic) Modal -->
+            <div id="modal-xo-platform-end-to-end-basic" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-xo-platform-end-to-end-basic-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-xo-platform-end-to-end-basic-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">XO Platform - End-to-End (Basic)</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://vistaragrowth.com/wp-content/uploads/2022/01/Kore-Magic-Quadrant-1350x1020-Feature-Img-Blog-V5.jpgq=tbn:ANd9GcQErlguXGDYrKByLfLhVuf6p-7ybTe_Ub6jKw&s" alt="XO Platform - End-to-End (Basic)">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Desarrollo integral de chatbots inteligentes.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: Kore.ai</li>
+                            <li>Fecha de expedición: Junio 2024</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-4 mb-2 text-blue-600 dark:text-blue-400">Skills adquiridas:</h4>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Diseño de chatbots</li>
+                            <li>Desarrollo de chatbots</li>
+                            <li>Automatización de procesos empresariales</li>
+                            <li>Integración de APIs</li>
+                            <li>Análisis de Datos Conversacionales</li>
+                            <li>Gestión de Proyectos de IA</li>
+                            <li>Colaboración interdisciplinaria</li>
+                        </ul>
+                        <a href="https://drive.google.com/file/d/1XMs_1LpT7Rs9A-DiDfubiq1dZEaMmUrl/view?usp=sharing" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Curso de Power BI Avanzado Modal -->
+            <div id="modal-curso-power-bi-avanzado" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-curso-power-bi-avanzado-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-curso-power-bi-avanzado-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Curso de Power BI Avanzado</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://images.datacamp.com/image/upload/v1724169856/image_ff55d03003.png" alt="Curso de Power BI Avanzado">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Avanzado manejo de Power BI.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: OpenWebinars</li>
+                            <li>Fecha de expedición: Mayo 2024</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-4 mb-2 text-blue-600 dark:text-blue-400">Skills adquiridas:</h4>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Elaboración de informes</li>
+                            <li>Presentaciones</li>
+                            <li>Capacidad de razonamiento</li>
+                            <li>Definición de requisitos</li>
+                            <li>Comunicación</li>
+                        </ul>
+                        <a href="https://openwebinars.net/cert/uVKa" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Matemáticas y Estadística para Inteligencia Artificial Modal -->
+            <div id="modal-matematicas-estadistica-ai" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-matematicas-estadistica-ai-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-matematicas-estadistica-ai-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Matemáticas y Estadística para Inteligencia Artificial</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://pbs.twimg.com/profile_images/1676531109629132800/yBtHL4wa_400x400.jpg" alt="Matemáticas y Estadística para Inteligencia Artificial">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Fundamentos matemáticos y estadísticos AI.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: OpenWebinars</li>
+                            <li>Fecha de expedición: Mayo 2024</li>
+                        </ul>
+                        <a href="https://openwebinars.net/cert/4N7Z" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 13. Curso de Python: Aprende a programar en Python 3 Modal -->
+            <div id="modal-curso-python-3" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-curso-python-3-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-curso-python-3-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Curso de Python: Aprende a programar en Python 3</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/640px-Python.svg.png" alt="Curso de Python: Aprende a programar en Python 3">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Aprendizaje básico de Python.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: OpenWebinars</li>
+                            <li>Fecha de expedición: Abril 2024</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-4 mb-2 text-blue-600 dark:text-blue-400">Skills adquiridas:</h4>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Sintaxis y semántica de Python</li>
+                            <li>Escritura de scripts y programas en Python</li>
+                            <li>Manejo de estructuras de datos en Python</li>
+                            <li>Control de flujo (bucles, condicionales)</li>
+                            <li>Funciones y módulos</li>
+                            <li>Manejo de errores y depuración</li>
+                            <li>Introducción a la programación orientada a objetos</li>
+                        </ul>
+                        <a href="https://openwebinars.net/cert/vtHR" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14. Curso de SQL desde Cero Modal -->
+            <div id="modal-curso-sql-desde-cero" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-curso-sql-desde-cero-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-curso-sql-desde-cero-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Curso de SQL desde Cero</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://arturonavarro.com/wp-content/uploads/2024/09/sql.jpeg" alt="Curso de SQL desde Cero">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Introducción al manejo de bases de datos.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: OpenWebinars</li>
+                            <li>Fecha de expedición: Abril 2024</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-4 mb-2 text-blue-600 dark:text-blue-400">Skills adquiridas:</h4>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Fundamentos de SQL</li>
+                            <li>Creación y gestión de bases de datos</li>
+                            <li>Consultas básicas y avanzadas</li>
+                            <li>Manipulación de datos (INSERT, UPDATE, DELETE)</li>
+                            <li>Uso de JOINs para combinar tablas</li>
+                            <li>Optimización de consultas</li>
+                            <li>Gestión de transacciones y control de concurrencia</li>
+                            <li>Seguridad y permisos en bases de datos</li>
+                        </ul>
+                        <a href="https://openwebinars.net/cert/Ayty" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 15. Curso de certificación Excel Associate MO-200 Modal -->
+            <div id="modal-certificacion-excel-associate-mo-200" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-certificacion-excel-associate-mo-200-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-certificacion-excel-associate-mo-200-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Curso de certificación Excel Associate MO-200</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://cdn.pixabay.com/photo/2023/06/01/12/02/excel-logo-8033473_960_720.png" alt="Curso de certificación Excel Associate MO-200">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Dominio de Excel para análisis.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: OpenWebinars</li>
+                            <li>Fecha de expedición: Abril 2024</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-4 mb-2 text-blue-600 dark:text-blue-400">Skills adquiridas:</h4>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Manejo avanzado de Excel</li>
+                            <li>Creación de fórmulas y funciones</li>
+                            <li>Análisis de datos con tablas dinámicas</li>
+                            <li>Visualización de datos con gráficos</li>
+                            <li>Gestión y manipulación de datos</li>
+                            <li>Automatización de tareas en Excel</li>
+                            <li>Uso de macros y VBA</li>
+                        </ul>
+                        <a href="https://openwebinars.net/cert/HTJW" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 16. Curso para aprender Linux desde cero Modal -->
+            <div id="modal-curso-linux-desde-cero" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-curso-linux-desde-cero-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-curso-linux-desde-cero-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Curso para aprender Linux desde cero</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://proximahost.es/blog/wp-content/uploads/2022/01/linux-30-anos.png" alt="Curso para aprender Linux desde cero">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Aprendizaje básico de Linux.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: OpenWebinars</li>
+                            <li>Fecha de expedición: Abril 2024</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-4 mb-2 text-blue-600 dark:text-blue-400">Skills adquiridas:</h4>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Navegación y comandos básicos de Linux</li>
+                            <li>Gestión de archivos y permisos</li>
+                            <li>Shell scripting básico</li>
+                            <li>Administración de sistemas Linux</li>
+                            <li>Instalación y configuración de software</li>
+                            <li>Uso de herramientas de línea de comandos</li>
+                        </ul>
+                        <a href="https://openwebinars.net/cert/WBJr" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17. First Certificate in English Modal -->
+            <div id="modal-first-certificate-english" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-first-certificate-english-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-first-certificate-english-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">First Certificate in English</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://agenda.deusto.es/wp-content/uploads/2017/09/Cambridge_Assessment_logo.jpg" alt="First Certificate in English">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Certificación de competencia en inglés.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: Cambridge University Press & Assessment</li>
+                            <li>Fecha de expedición: Julio 2023</li>
+                            <li>ID de la credencial: 500/2705/0</li>
+                        </ul>
+                        <h4 class="text-xl font-semibold mt-4 mb-2 text-blue-600 dark:text-blue-400">Skills adquiridas:</h4>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Comprensión de lectura</li>
+                            <li>Escritura en inglés</li>
+                            <li>Comprensión auditiva</li>
+                            <li>Expresión oral</li>
+                            <li>Gramática y vocabulario</li>
+                            <li>Comunicación efectiva en inglés</li>
+                        </ul>
+                        <a href="https://drive.google.com/file/d/1_KF1GkCNlwy9ZtfN0iJBy1vuUOSEd_M8/view?usp=sharing" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 18. Youthpass Sustain-Able-Modal -->
+            <div id="modal-youthpass-in-nature" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-youthpass-in-nature-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-youthpass-in-nature-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Youthpass Sustain-Able</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://www.injuve.es/sites/default/files/styles/porcentaje/public/imagenes/2022/04/youthpass.png?itok=JwH2Rr6a" alt="Youthpass In Nature">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Validación de competencias en sostenibilidad.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: Erasmus+</li>
+                            <li>Fecha de expedición: Marzo 2023</li>
+                        </ul>
+                        <a href="https://drive.google.com/file/d/1iC4k2lcjyAjUuDJbau6GN5xDE8i6GzTT/view?usp=sharing" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 19. Youthpass In Nature Modal -->
+            <div id="modal-youthpass-on-board" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-youthpass-on-board-title">
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-lg w-full relative transform scale-95 opacity-0 transition-all duration-300">
+                    <button class="absolute top-4 right-4 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white focus:outline-none" aria-label="Close" data-modal-close>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="p-6">
+                        <h3 id="modal-youthpass-on-board-title" class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">Youthpass On Board</h3>
+                        <img class="w-full h-64 object-cover rounded mb-4" src="https://www.injuve.es/sites/default/files/styles/porcentaje/public/imagenes/2022/04/youthpass.png?itok=JwH2Rr6a" alt="Youthpass On Board">
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Validación de competencias en proyectos Erasmus+ en la naturaleza.</p>
+                        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
+                            <li>Proveedor: Erasmus+</li>
+                            <li>Fecha de expedición: Mayo 2023</li>
+                        </ul>
+                        <a href="https://drive.google.com/file/d/1FGmuxOAn0MIey24w0zZXdC2-iI8XqMXP/view?usp=sharing" target="_blank" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Mostrar Credencial</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- JavaScript para la Funcionalidad -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const menuToggle = document.getElementById('menu-toggle');
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const themeToggle = document.getElementById('theme-toggle');
+                    const sunIcon = document.getElementById('sun-icon');
+                    const moonIcon = document.getElementById('moon-icon');
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    const allSections = document.querySelectorAll('.section');
+
+                        // Función para mostrar una sección específica
+                    const showSection = (page) => {
+                        allSections.forEach(section => {
+                            if (section.id === page) {
+                                section.classList.add('active');
+                            } else {
+                                section.classList.remove('active');
+                            }
+                        });
+                    };
+
+                        // Función para actualizar la clase 'active' en los enlaces de navegación
+                    const setActiveLink = (activeLink) => {
+                        navLinks.forEach(link => {
+                            if (link === activeLink) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    };
+
+                        // Manejar clics en enlaces de navegación
+                    navLinks.forEach(link => {
+                        link.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const page = link.getAttribute('data-page');
+                            showSection(page);
+                            setActiveLink(link);
+                                // Cerrar el menú móvil si está abierto
+                            if (!mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                            }
+                        });
+                    });
+
+                        // Botón "Certifications" en el logo para volver a "All Certifications"
+                    const navAllCertifications = document.getElementById('nav-all-certifications');
+                    navAllCertifications.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        showSection('all-certifications');
+                        const allCertLink = document.querySelector('[data-page="all-certifications"]');
+                        setActiveLink(allCertLink);
+                            // Cerrar el menú móvil si está abierto
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    });
+
+                        // Toggle de Modo Oscuro
+                    themeToggle.addEventListener('click', () => {
+                        document.documentElement.classList.toggle('dark');
+                        if (document.documentElement.classList.contains('dark')) {
+                                // Cambiar a Modo Oscuro
+                            localStorage.setItem('theme', 'dark');
+                            sunIcon.classList.add('hidden');
+                            moonIcon.classList.remove('hidden');
+                        } else {
+                                // Cambiar a Modo Claro
+                            localStorage.setItem('theme', 'light');
+                            sunIcon.classList.remove('hidden');
+                            moonIcon.classList.add('hidden');
+                        }
+                    });
+
+                        // Toggle del Menú Móvil
+                    menuToggle.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+
+                        // Manejo de Modales
+                    const openModalButtons = document.querySelectorAll('[data-modal-target]');
+                    const closeModalButtons = document.querySelectorAll('[data-modal-close]');
+                    const modals = document.querySelectorAll('[role="dialog"]');
+
+                    openModalButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const modalId = button.getAttribute('data-modal-target');
+                            const modal = document.getElementById(modalId);
+                            if (modal) {
+                                modal.classList.remove('hidden');
+                                setTimeout(() => {
+                                    modal.querySelector('div').classList.remove('scale-95', 'opacity-0');
+                                    modal.querySelector('div').classList.add('scale-100', 'opacity-100');
+                                }, 10);
+                                    // Prevenir el scroll de fondo
+                                document.body.classList.add('overflow-hidden');
+                                    // Enfocar el botón de cierre
+                                modal.querySelector('button[aria-label="Close"]').focus();
+                            }
+                        });
+                    });
+
+                    closeModalButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const modal = button.closest('[role="dialog"]');
+                            if (modal) {
+                                modal.querySelector('div').classList.add('scale-95', 'opacity-0');
+                                modal.querySelector('div').classList.remove('scale-100', 'opacity-100');
+                                setTimeout(() => {
+                                    modal.classList.add('hidden');
+                                }, 300);
+                                    // Permitir el scroll de fondo
+                                document.body.classList.remove('overflow-hidden');
+                                    // Retornar el enfoque al botón de toggle de tema
+                                themeToggle.focus();
+                            }
+                        });
+                    });
+
+                        // Cerrar modales al hacer clic fuera del contenido
+                    modals.forEach(modal => {
+                        modal.addEventListener('click', (e) => {
+                            if (e.target === modal) {
+                                modal.querySelector('div').classList.add('scale-95', 'opacity-0');
+                                modal.querySelector('div').classList.remove('scale-100', 'opacity-100');
+                                setTimeout(() => {
+                                    modal.classList.add('hidden');
+                                }, 300);
+                                document.body.classList.remove('overflow-hidden');
+                            }
+                        });
+                    });
+
+                        // Cerrar modales con la tecla Escape
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape') {
+                            modals.forEach(modal => {
+                                modal.querySelector('div').classList.add('scale-95', 'opacity-0');
+                                modal.querySelector('div').classList.remove('scale-100', 'opacity-100');
+                                setTimeout(() => {
+                                    modal.classList.add('hidden');
+                                }, 300);
+                            });
+                            document.body.classList.remove('overflow-hidden');
+                        }
+                    });
+
+                        // Mostrar la sección "All Certifications" al cargar la página y establecer el enlace activo
+                    showSection('all-certifications');
+                    const allCertLink = document.querySelector('[data-page="all-certifications"]');
+                    setActiveLink(allCertLink);
+
+                        // Mejorar la experiencia del usuario al cargar el contenido
+                    window.addEventListener('load', () => {
+                        document.body.classList.remove('opacity-0');
+                    });
+                });
+
+            </script>
+            </body>
+            </html>
